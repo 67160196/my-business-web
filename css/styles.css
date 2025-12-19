@@ -37,7 +37,7 @@ body {
 	--color-muted: #6b7280;
 	--bg: #f5f7fa;
 	/* helpers */
-	--overlay: rgba(var(--color-neutral-rgb), 0.45);
+	--overlay: rgba(var(--color-neutral-rgb), 0.60);
 	--shadow-rgb: 15,23,42;
 }
 
@@ -107,6 +107,7 @@ a:focus {
 	color: #ffffff;
 	background: linear-gradient(var(--overlay), var(--overlay)), url("../images/hero.jpg") center/cover no-repeat;
 	min-height: 100vh; /* full viewport height for hero */
+	position: relative; /* container for absolute overlay text */
 }
 
 .hero h1 {
@@ -114,7 +115,40 @@ a:focus {
 	line-height: 1.05;
 	margin-bottom: 1rem;
 	font-weight: 700;
-	text-shadow: 0 4px 18px rgba(var(--shadow-rgb), 0.25);
+	text-shadow: 0 3px 14px rgba(var(--shadow-rgb), 0.14);
+	color: rgba(255,255,255,0.98); /* brighter heading */
+}
+
+.hero p {
+	color: rgba(255,255,255,0.95); /* stronger contrast for hero text */
+	font-size: clamp(1rem, 2.6vw, 1.125rem);
+	max-width: 900px;
+	margin: 0.5rem auto 1.25rem auto;
+}
+
+/* Keep hero content in flow and use flex spacing to avoid overlap */
+.hero .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+
+/* On very large screens increase gap so button sits well below heading */
+@media (min-width: 1200px) {
+	.hero .container {
+		gap: 1.5rem;
+		padding-top: 3.5rem;
+		padding-bottom: 3.5rem;
+	}
+}
+
+.hero .btn {
+	z-index: 2;
+	margin-top: 0.25rem;
 }
 
 .card {
@@ -123,7 +157,7 @@ a:focus {
 	margin: 10px 0; /* spacing between cards */
 	border-radius: 8px;
 	border: 1px solid #ddd; /* light border */
-	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+	box-shadow: 0 2px 8px rgba(var(--shadow-rgb), 0.08);
 	transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
@@ -172,6 +206,9 @@ a:focus {
 	align-items: center;
 	justify-content: center; /* center container */
 	border-bottom: 2px solid var(--color-accent); /* accent border */
+	position: sticky; /* stick to top when scrolling */
+	top: 0;
+	z-index: 100; /* header above content */
 }
 
 #header .logo {
@@ -194,17 +231,22 @@ img {
 }
 
 #footer {
-	background-color: #0b2330; /* darker than content */
+	background-color: var(--color-neutral); /* darker neutral for high contrast */
 	color: #ffffff;
-	padding: 30px 20px; /* 30px vertical, 20px horizontal */
+	padding: 40px 20px; /* increased padding for breathing room */
 	text-align: center;
-	font-size: 0.95rem;
-	margin-top: 40px; /* spacing from content */
+	font-size: 1rem;
+	margin-top: 48px; /* spacing from content */
 }
 
 #footer p {
 	margin: 0;
-	opacity: 0.95;
+	opacity: 0.98;
+}
+
+#footer a {
+	color: rgba(255,255,255,0.92);
+	text-decoration: underline;
 }
 
 /* Navigation and menu pseudo-classes */
@@ -255,7 +297,7 @@ nav ul li:last-child a {
 /* Cards: hover and active */
 .card:hover {
 	transform: translateY(-4px);
-	box-shadow: 0 12px 30px rgba(16,24,40,0.08);
+	box-shadow: 0 12px 30px rgba(var(--shadow-rgb), 0.08);
 }
 
 .card:active {
@@ -304,6 +346,46 @@ nav ul li:last-child a {
 	.section.features .card {
 		width: 30%; /* three columns on desktop */
 	}
+}
+
+/* Fixed UI widgets: back-to-top and chat */
+#back-to-top,
+#chat-widget {
+	position: fixed;
+	right: 20px;
+	z-index: 50;
+	display: none; /* hidden until JS enables */
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 999px;
+	color: #fff;
+	box-shadow: 0 6px 20px rgba(var(--shadow-rgb), 0.12);
+	cursor: pointer;
+	transition: transform 120ms ease, opacity 120ms ease;
+}
+
+#back-to-top {
+	bottom: 20px;
+	background: linear-gradient(135deg, rgba(var(--color-primary-rgb),0.95), rgba(var(--color-secondary-rgb),0.95));
+}
+
+#chat-widget {
+	bottom: 80px;
+	background: var(--color-accent);
+}
+
+#back-to-top:hover,
+#chat-widget:hover {
+	transform: translateY(-4px);
+	opacity: 0.98;
+}
+
+#back-to-top:focus,
+#chat-widget:focus {
+	outline: none;
+	box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.12);
 }
 
 

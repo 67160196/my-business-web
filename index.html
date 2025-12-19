@@ -58,5 +58,21 @@
                 <p>&copy; 2024 บริษัท it จำกัด. สงวนลิขสิทธิ์.</p>
             </div>
         </footer>
-    </body>
+    
+        <button id="back-to-top" aria-label="เลื่อนขึ้นด้านบน" title="เลื่อนขึ้นด้านบน">↑</button>
+        <a id="chat-widget" href="contact.html" aria-label="แชทกับเรา" title="แชทกับเรา">💬</a>
+
+        <script>
+        (function(){
+            var btn = document.getElementById('back-to-top');
+            if(!btn) return;
+            var showAt = 200;
+            function toggle(){ btn.style.display = (window.scrollY>showAt) ? 'flex' : 'none'; }
+            window.addEventListener('scroll', toggle);
+            toggle();
+            btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); btn.blur(); });
+        })();
+        </script>
+
+        </body>
 </html>
