@@ -1,0 +1,17 @@
+/* Universal reset / normalize */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Base page settings */
+body {
+	font-family: "Noto Sans Thai", "Segoe UI", Roboto, Arial, sans-serif;
+	line-height: 1.6;
+	background-color: #f5f7fa;
+	color: #222222;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
