@@ -15,3 +15,55 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+/* Headings */
+h1 {
+	font-size: 2.5rem;
+	color: #0b4a6f;
+	line-height: 1.1;
+	margin-bottom: 0.75rem;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 1.75rem;
+	color: #0e536b;
+	margin-bottom: 0.6rem;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 1.25rem;
+	color: #134a5a;
+	margin-bottom: 0.5rem;
+	font-weight: 600;
+}
+
+h4 {
+	font-size: 1rem;
+	color: #163f4a;
+	margin-bottom: 0.4rem;
+	font-weight: 600;
+}
+
+/* Paragraphs */
+p {
+	line-height: 1.6; /* readable spacing (>= 1.5) */
+	color: #333333;
+	margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+	color: #1a73e8;
+	text-decoration: none;
+	transition: color 160ms ease-in-out, text-decoration 160ms ease-in-out;
+}
+
+a:hover,
+a:focus {
+	color: #0b57c9;
+	text-decoration: underline;
+	outline: none;
+}
+
+
