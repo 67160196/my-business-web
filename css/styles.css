@@ -98,18 +98,15 @@ a:focus {
 
 /* Utility / Component classes */
 .hero {
-	padding: 4.5rem 1rem;
+	padding: 60px 20px; /* 60px vertical, 20px horizontal */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	flex-direction: column;
 	color: #ffffff;
-	background-color: #0b4a6f; /* fallback color */
-	background-image: url("../images/hero.jpg");
-	background-size: cover;
-	background-position: center;
-	height: 100vh; /* full viewport height for hero */
+	background: linear-gradient(var(--overlay), var(--overlay)), url("../images/hero.jpg") center/cover no-repeat;
+	min-height: 100vh; /* full viewport height for hero */
 }
 
 .hero h1 {
@@ -122,10 +119,11 @@ a:focus {
 
 .card {
 	background: #ffffff;
-	padding: 1.25rem;
+	padding: 20px; /* content padding */
+	margin: 10px 0; /* spacing between cards */
 	border-radius: 8px;
-	border: 1px solid rgba(16,24,32,0.06);
-	box-shadow: 0 6px 18px rgba(var(--shadow-rgb), 0.06);
+	border: 1px solid #ddd; /* light border */
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 	transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
@@ -159,23 +157,21 @@ a:focus {
 }
 
 .container {
-	width: 90%; /* use percentage for responsive fluid layout */
-	max-width: 1200px; /* larger max width */
+	width: 90%; /* responsive */
+	max-width: 1200px; /* requirement */
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding: 40px 20px; /* padding vertical 40px, horizontal 20px */
 }
 
 /* ID selectors for layout regions */
 #header {
 	background-color: #ffffff;
-	padding: 0.8rem 1rem;
+	padding: 0.5rem 0; /* vertical padding; nav item padding applied to links */
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	gap: 1rem;
-	border-bottom: 1px solid rgba(16,24,40,0.04);
+	justify-content: center; /* center container */
+	border-bottom: 2px solid var(--color-accent); /* accent border */
 }
 
 #header .logo {
@@ -198,11 +194,12 @@ img {
 }
 
 #footer {
-	background-color: #a0cee9;
+	background-color: #0b2330; /* darker than content */
 	color: #ffffff;
-	padding: 1.5rem 1rem;
+	padding: 30px 20px; /* 30px vertical, 20px horizontal */
 	text-align: center;
 	font-size: 0.95rem;
+	margin-top: 40px; /* spacing from content */
 }
 
 #footer p {
@@ -214,7 +211,7 @@ img {
 nav ul {
 	list-style: none;
 	display: flex;
-	gap: 1rem;
+	gap: 1rem; /* spacing between items */
 	align-items: center;
 	margin: 0;
 	padding: 0;
@@ -222,9 +219,9 @@ nav ul {
 
 nav ul li a {
 	display: inline-block;
-	padding: 0.35rem 0.5rem;
+	padding: 15px 20px; /* nav items padding per spec */
 	color: inherit;
-	border-radius: 4px;
+	border-radius: 6px;
 }
 
 nav ul li a:hover,
