@@ -158,31 +158,33 @@ a:focus {
 	border-radius: 8px;
 	border: 1px solid #ddd; /* light border */
 	box-shadow: 0 2px 8px rgba(var(--shadow-rgb), 0.08);
-	transition: transform 160ms ease, box-shadow 160ms ease;
+	transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms cubic-bezier(.2,.8,.2,1), background-color 220ms ease;
 }
 
 .card:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 12px 30px rgba(var(--shadow-rgb), 0.08);
+	transform: translateY(-6px);
+	box-shadow: 0 18px 40px rgba(var(--shadow-rgb), 0.12);
+	background-color: #fbfdff;
 }
 
 .btn {
 	display: inline-block;
 	padding: 0.6rem 1rem;
-	background-color: #1a73e8;
+	background-color: var(--color-primary);
 	color: #fff;
 	border-radius: 6px;
 	text-decoration: none;
 	font-weight: 600;
 	border: none;
 	cursor: pointer;
-	transition: background-color 160ms ease, transform 120ms ease;
+	transition: all 0.3s ease; /* smoother overall transition */
 }
 
 .btn:hover,
 .btn:focus {
-	background-color: #0b57c9;
-	transform: translateY(-1px);
+	background-color: rgba(var(--color-primary-rgb), 0.95);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 	outline: none;
 }
 
@@ -272,12 +274,31 @@ nav ul li a {
 	padding: 15px 20px; /* nav items padding per spec */
 	color: inherit;
 	border-radius: 6px;
+	transition: color 180ms ease, text-decoration-color 180ms ease, transform 120ms ease;
 }
 
 nav ul li a:hover,
 nav ul li:hover a {
-	color: #0b57c9;
+	color: var(--color-primary);
 	text-decoration: underline;
+	transform: translateY(-2px);
+}
+
+/* Basic submenu support (if submenus are added in future) */
+nav ul li { position: relative; }
+nav ul li ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: #fff;
+	box-shadow: 0 8px 30px rgba(var(--shadow-rgb), 0.08);
+	border-radius: 8px;
+	padding: 8px 12px;
+	min-width: 180px;
+}
+nav ul li:hover > ul {
+	display: block;
 }
 
 nav ul li:first-child a {
@@ -373,6 +394,7 @@ nav ul li:last-child a {
 	border: 1px solid rgba(16,24,40,0.04);
 	box-shadow: 0 6px 20px rgba(var(--shadow-rgb), 0.04);
 	text-align: center;
+	transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
 }
 
 /* Team grid: responsive columns using CSS Grid */
@@ -389,6 +411,7 @@ nav ul li:last-child a {
 	text-align: center;
 	border: 1px solid rgba(16,24,40,0.04);
 	box-shadow: 0 6px 18px rgba(var(--shadow-rgb), 0.04);
+	transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
 }
 
 .team-member img {
@@ -396,6 +419,18 @@ nav ul li:last-child a {
 	max-height: 160px;
 	width: auto;
 	margin-bottom: 12px;
+}
+
+.service-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 16px 34px rgba(var(--shadow-rgb), 0.12);
+	background-color: #fbfdff;
+}
+
+.team-member:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 16px 34px rgba(var(--shadow-rgb), 0.10);
+	background-color: #fffdfa;
 }
 
 /* Contact form layout */
