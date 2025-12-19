@@ -217,6 +217,14 @@ a:focus {
 	gap: 0.5rem;
 }
 
+/* Header layout: place logo and navigation on single row */
+#header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* logo left, nav right */
+	gap: 1rem;
+}
+
 #header img {
 	height: 48px; /* fixed icon height in px */
 	width: auto;
@@ -346,6 +354,73 @@ nav ul li:last-child a {
 	.section.features .card {
 		width: 30%; /* three columns on desktop */
 	}
+}
+
+/* Services: 3-column flexible layout using flexbox */
+.services {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+.service-card {
+	flex: 1 1 300px; /* grow, shrink, base width */
+	min-width: 300px; /* responsive min width */
+	background: #ffffff;
+	padding: 20px;
+	border-radius: 10px;
+	border: 1px solid rgba(16,24,40,0.04);
+	box-shadow: 0 6px 20px rgba(var(--shadow-rgb), 0.04);
+	text-align: center;
+}
+
+/* Team grid: responsive columns using CSS Grid */
+.team {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+}
+
+.team-member {
+	background: #fff;
+	padding: 18px;
+	border-radius: 10px;
+	text-align: center;
+	border: 1px solid rgba(16,24,40,0.04);
+	box-shadow: 0 6px 18px rgba(var(--shadow-rgb), 0.04);
+}
+
+.team-member img {
+	border-radius: 8px;
+	max-height: 160px;
+	width: auto;
+	margin-bottom: 12px;
+}
+
+/* Contact form layout */
+.contact-form form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	font-size: 1rem;
+}
+
+.contact-form label {
+	font-weight: 600;
+}
+
+.contact-form button {
+	align-self: flex-start;
 }
 
 /* Fixed UI widgets: back-to-top and chat */
