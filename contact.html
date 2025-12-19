@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>เกี่ยวกับเรา - บริษัท it จำกัด</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="โลโก้บริษัท" height="50">
-            <span>บริษัท it จำกัด</span> 
-        </div>
+        <header id="header">
+            <div class="container">
+                <div class="logo">
+                    <img src="images/logo.png" alt="โลโก้บริษัท">
+                    <span>บริษัท it จำกัด</span>
+                </div>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">หน้าแรก</a></li>
-                <li><a href="about.html">เกี่ยวกับเรา</a></li>
-                <li><a href="services.html">บริการของเรา</a></li>
-                <li><a href="contact.html">ติดต่อเรา</a></li>
-            </ul>
-        </nav>
-    </header>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">หน้าแรก</a></li>
+                        <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                        <li><a href="services.html">บริการของเรา</a></li>
+                        <li><a href="contact.html">ติดต่อเรา</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
     <main>
         <section class="contact-form">
             <h1>ติดต่อเรา</h1>
@@ -34,7 +37,7 @@
                 <label for="message">ข้อความ:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
 
-                <button type="submit">ส่งข้อความ</button>
+                <button type="submit" class="btn">ส่งข้อความ</button>
             </form>
         </section>
 
@@ -50,5 +53,11 @@
             <h2>แผนที่ของเรา</h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.1234567890123!2d100.12345678901234!3d13.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29edc1234567%3A0xabcdef1234567890!2z4LiB4Liy4Lij4Lii4LiH4Li04LiZ4LmJ4LiX4Lij4LiB4Liy4LiH4LmA4Lil4LmM4LiB4Lij4Lii4LiH4LiV4LmJ4LiX4LijIOC4reC4suC4hOC5gOC4o-C5jOC4geC4ouC5jCDguKHguLLguITguYDguKfguYw!5e0!3m2!1sth!2sth!4v1616161616161!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2024 บริษัท it จำกัด. สงวนลิขสิทธิ์.</p>
+        </div>
+    </footer>
 </body>
 </html>

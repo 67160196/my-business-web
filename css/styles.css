@@ -163,5 +163,82 @@ a:focus {
 	opacity: 0.95;
 }
 
+/* Navigation and menu pseudo-classes */
+nav ul {
+	list-style: none;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li a {
+	display: inline-block;
+	padding: 0.35rem 0.5rem;
+	color: inherit;
+	border-radius: 4px;
+}
+
+nav ul li a:hover,
+nav ul li:hover a {
+	color: #0b57c9;
+	text-decoration: underline;
+}
+
+nav ul li:first-child a {
+	font-weight: 700;
+}
+
+nav ul li:last-child a {
+	padding-left: 0.75rem;
+}
+
+/* Buttons: hover and active */
+.btn:hover,
+.btn:focus {
+	background-color: #0b57c9;
+	transform: translateY(-1px);
+	outline: none;
+}
+
+.btn:active {
+	transform: translateY(0) scale(0.995);
+	box-shadow: none;
+	opacity: 0.98;
+}
+
+/* Cards: hover and active */
+.card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 30px rgba(16,24,40,0.08);
+}
+
+.card:active {
+	transform: translateY(-2px);
+}
+
+/* Use :nth-child / :first-child / :last-child for list-like styling */
+.section.features .card:nth-child(odd) {
+	background-color: #fbfdff;
+}
+
+.section.features .card:nth-child(even) {
+	background-color: #ffffff;
+}
+
+.section.features .card:first-child {
+	border-color: rgba(11,74,111,0.06);
+}
+
+.section.features .card:last-child {
+	border-color: rgba(11,74,111,0.08);
+}
+
+.btn:focus-visible {
+	box-shadow: 0 0 0 3px rgba(26,115,232,0.18);
+}
+
+
 
 
